@@ -26,10 +26,14 @@ public class Test {
             }
         }
 
+        
+        int imgWidth = img.getWidth();
+        int imgHeight = img.getHeight();
+
         output += fileName + "=";
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < imgWidth; i++) {
             //output += "[";
-            for (int j = 0; j < 16; j++) {
+            for (int j = 0; j < imgHeight; j++) {
                 //output += "[";
                 //writer.write((imgData[i][j]  >> 24) & 0X000000FF);
                 //writer.write(", ");
@@ -39,18 +43,18 @@ public class Test {
                 output += ", ";
                 output += Integer.toString((imgData[i][j]  >> 0) & 0X000000FF);
                 //output += "]";
-                if (j != 15) {
+                if (j != imgHeight - 1) {
                     output += ", ";
                 }
             }
-            if (i != 15) {
+            if (i != imgWidth - 1) {
                 //output += "],\n";
                 output += ", ";
             }
         }
         //output += "]]";
 
-        System.out.println(output);
+        //System.out.println(output);
 
         
         try {
