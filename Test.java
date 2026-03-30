@@ -26,11 +26,11 @@ public class Test {
             }
         }
 
-        output += "[";
+        output += fileName + "=";
         for (int i = 0; i < 16; i++) {
-            output += "[";
+            //output += "[";
             for (int j = 0; j < 16; j++) {
-                output += "[";
+                //output += "[";
                 //writer.write((imgData[i][j]  >> 24) & 0X000000FF);
                 //writer.write(", ");
                 output += Integer.toString((imgData[i][j]  >> 16) & 0X000000FF);
@@ -38,16 +38,17 @@ public class Test {
                 output += Integer.toString((imgData[i][j]  >> 8) & 0X000000FF);
                 output += ", ";
                 output += Integer.toString((imgData[i][j]  >> 0) & 0X000000FF);
-                output += "]";
+                //output += "]";
                 if (j != 15) {
                     output += ", ";
                 }
             }
             if (i != 15) {
-                output += "],\n";
+                //output += "],\n";
+                output += ", ";
             }
         }
-        output += "]]";
+        //output += "]]";
 
         System.out.println(output);
 
